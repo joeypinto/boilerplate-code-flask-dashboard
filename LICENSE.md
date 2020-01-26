@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 - present **AppSeed - [Web App Generator](https://appseed.us/app-generator)**
+Copyright (c) 2019 [AppSeed - Web App Generator](http://appseed.us/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
