@@ -1,6 +1,13 @@
 # Flask Dashboard [Boilerplate Code](https://appseed.us/boilerplate-code)
 
-Playground boilerplate code used by the AppSeed community for simple [Flask admin dashboards](http://appseed.us/admin-dashboards/flask).
+Playground **boilerplate code** used by the **[AppSeed](https://appseed.us)** community for simple [Flask Admin Dashboards](https://appseed.us/admin-dashboards/flask).
+
+<br />
+
+## How it works
+
+Anyone can submit requests for new modules and features using the issues tracker provided by Github. Popular features will be coded by the AppSeed team and later integrated in the automated workflow. 
+For more information please access the **[AppSeed](https://appseed.us)** platform or join the community on [Discord](https://discord.gg/fZC6hup). 
 
 <br />
 
