@@ -120,4 +120,4 @@ Visit `http://localhost:5000` in your browser. The app should be up & running.
 <br />
 
 ---
-Flask Dashboard [Boilerplate Code](https://appseed.us/boilerplate-code) - Provided by **AppSeed - [Web App Generator](https://appseed.us/app-generator)**.
+Flask Dashboard [Boilerplate Code](https://appseed.us/boilerplate-code) - Provided by **AppSeed - [Web App Generator](https://appseed.us/app-generator)**. 
