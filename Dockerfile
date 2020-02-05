@@ -8,5 +8,5 @@ COPY migrations migrations
 
 RUN pip install -r requirements-sqlite.txt
 
-EXPOSE 5000
-CMD ["gunicorn", "--config", "gunicorn.py", "run:app"]
+EXPOSE 5005
+CMD ["gunicorn", "--config", "gunicorn-cfg.py", "run:app"]
