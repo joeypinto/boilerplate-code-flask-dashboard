@@ -100,11 +100,11 @@ If all goes well, we should see the app running in the browser.
 
 ## Deployment
 
-The app is provided with a basic configuration to be executed in many configurations: [Docker, Gunicorn, and Waitress.
+The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
 
 <br />
 
-### Docker execution
+### [Docker](https://www.docker.com/) execution
 ---
 
 The application can be easily executed in a docker container. The steps:
