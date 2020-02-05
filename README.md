@@ -66,12 +66,12 @@ $ # Virtualenv modules installation (Windows based systems)
 $ # virtualenv --no-site-packages env
 $ # .\env\Scripts\activate
 $ 
-$ # Install modules
-$ # SQLIte version (no PostgreSQL)
-$ pip3 install -r requirements-sqlite.txt
+$ # Install modules - SQLite Database
+$ #  version (no PostgreSQL)
+$ pip3 install -r requirements.txt
 $ 
 $ # OR with PostgreSQL connector
-$ pip install -r requirements.txt
+$ # pip install -r requirements-pgsql.txt
 $
 $ # Set the FLASK_APP environment variable
 $ (Unix/Mac) export FLASK_APP=run.py
@@ -100,7 +100,7 @@ If all goes well, we should see the app running in the browser.
 
 ## Docker execution
 
-The application can be easily excuted in a docker container. The steps:
+The application can be easily executed in a docker container. The steps:
 
 > Get the code
 
