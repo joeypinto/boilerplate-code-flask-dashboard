@@ -126,10 +126,27 @@ Visit `http://localhost:5005` in your browser. The app should be up & running.
 
 <br />
 
-### Gunicorn
+### [Gunicorn](https://gunicorn.org/)
 ---
 
-@Todo
+Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
+
+> Install using pip
+
+```bash
+$ pip install gunicorn
+```
+> Start the app using gunicorn binary
+
+```bash
+$ gunicorn --bind 0.0.0.0:8001 run:app
+Serving on http://localhost:8001
+```
+
+Visit `http://localhost:8001` in your browser. The app should be up & running.
+
+
+<br />
 
 ### [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/)
 ---
@@ -148,7 +165,16 @@ $ waitress-serve --port=8001 run:app
 Serving on http://localhost:8001
 ```
 
-Visit `http://localhost:5005` in your browser. The app should be up & running.
+Visit `http://localhost:8001` in your browser. The app should be up & running.
+
+<br />
+
+## Support
+
+- Free support via eMail < [support @ appseed.us](https://appseed.us/support) > and **Github** issues tracker
+- 24/7 Live Support via [Discord](https://discord.gg/fZC6hup) for paid plans and commercial products.
+
+<br />
 
 ---
 Flask Dashboard [Boilerplate Code](https://appseed.us/boilerplate-code) - Provided by **AppSeed - [Web App Generator](https://appseed.us/app-generator)**. 
