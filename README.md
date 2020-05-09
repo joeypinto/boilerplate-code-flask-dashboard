@@ -1,6 +1,6 @@
 # [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard)
 
-> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple web apps coded in [Flask](https://palletsprojects.com/p/flask/)
+> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Flask](https://palletsprojects.com/p/flask/)
 
 <br />
 
