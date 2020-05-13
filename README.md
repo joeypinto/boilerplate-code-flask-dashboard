@@ -19,9 +19,9 @@
 
 > Links
 
-- LIVE Demo: [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/login.html)
-- Official Page: [Boierplate Code Flask](https://appseed.us/boilerplate-code/flask-dashboard)
-- Documentation: [Boierplate Code Flask](https://docs.appseed.us/boilerplate-code/flask-dashboard)
+- [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/login.html) - LIVE Demo 
+- [Boierplate Code Flask](https://appseed.us/boilerplate-code/flask-dashboard) - Official product page
+- [Boierplate Code Flask](https://docs.appseed.us/boilerplate-code/flask-dashboard) - Starter docs
 
 <br />
 
