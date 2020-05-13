@@ -12,7 +12,7 @@
 - Session-Based authentication (via **flask_login**)
 - Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx
-- UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
+- Sample UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
 - MIT License
 - Free support via **Github** issues tracker
 - Paid 24/7 Live Support via [Discord](https://discord.gg/fZC6hup).
@@ -25,7 +25,7 @@
 
 <br />
 
-![Boierplate Code Flask  Dashboard - Open-Source template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/boilerplate-code-flask-dashboard/master/media/boilerplate-code-flask-dashboard-screen.png)
+![Boierplate Code Flask Dashboard - Open-Source template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/boilerplate-code-flask-dashboard/master/media/boilerplate-code-flask-dashboard-screen.png)
 
 <br />
 
