@@ -1,27 +1,23 @@
 # [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard)
 
-> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Flask](https://palletsprojects.com/p/flask/)
+> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Flask](https://palletsprojects.com/p/flask/) - Features:
 
-<br />
-
-## Dashboard Features
-
+- Sample UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
 - SQLite, PostgreSQL, SQLAlchemy ORM
 - Alembic (DB schema migrations)
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**)
 - Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx
-- Sample UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
 - MIT License
 - Free support via **Github** issues tracker
 - Paid 24/7 Live Support via [Discord](https://discord.gg/fZC6hup).
 
 > Links
 
-- [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/login.html) - LIVE Demo 
-- [Boierplate Code Flask](https://appseed.us/boilerplate-code/flask-dashboard) - Official product page
-- [Boierplate Code Flask](https://docs.appseed.us/boilerplate-code/flask-dashboard) - Starter docs
+- [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/) - LIVE Demo
+- [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Official product page
+- [Boierplate Code Flask Dashboard](https://docs.appseed.us/boilerplate-code/flask-dashboard) - Starter docs
 
 <br />
 
@@ -107,7 +103,7 @@ The project is coded using blueprints, app factory pattern, dual configuration p
   - If env.DEBUG is set to *True* the SQLite storage is used
   - If env.DEBUG is set to *False* the specified DB driver is used (MySql, PostgreSQL)
 - Call the app factory method `create_app` defined in app/__init__.py
-- Redirect the guest users to Login page 
+- Redirect the guest users to Login page
 - Unlock the pages served by *home* blueprint for authenticated users
 
 <br />
@@ -126,20 +122,20 @@ The *Base* blueprint handles the authentication (routes and forms) and assets ma
    |         |    |-- <css, JS, images>          # CSS files, Javascripts files
    |         |
    |         |-- templates/                      # Templates used to render pages
-   |               |
-   |               |-- includes/                 #
-   |               |    |-- navigation.html      # Top menu component
-   |               |    |-- sidebar.html         # Sidebar component
-   |               |    |-- footer.html          # App Footer
-   |               |    |-- scripts.html         # Scripts common to all pages
-   |               |
-   |               |-- layouts/                  # Master pages
-   |               |    |-- base-fullscreen.html # Used by Authentication pages
-   |               |    |-- base.html            # Used by common pages
-   |               |
-   |               |-- accounts/                 # Authentication pages
-   |                    |-- login.html           # Login page
-   |                    |-- register.html        # Registration page
+   |              |
+   |              |-- includes/                  #
+   |              |    |-- navigation.html       # Top menu component
+   |              |    |-- sidebar.html          # Sidebar component
+   |              |    |-- footer.html           # App Footer
+   |              |    |-- scripts.html          # Scripts common to all pages
+   |              |
+   |              |-- layouts/                   # Master pages
+   |              |    |-- base-fullscreen.html  # Used by Authentication pages
+   |              |    |-- base.html             # Used by common pages
+   |              |
+   |              |-- accounts/                  # Authentication pages
+   |                   |-- login.html            # Login page
+   |                   |-- register.html         # Registration page
    |
    |-- requirements.txt                          # Development modules - SQLite storage
    |-- requirements-mysql.txt                    # Production modules  - Mysql DMBS
@@ -162,24 +158,24 @@ The *Home* blueprint handles UI Kit pages for authenticated users. This is the p
 < PROJECT ROOT >
    |
    |-- app/
-   |    |-- base/                                # Base Blueprint - handles the authentication
-   |    |-- home/                                # Home Blueprint - serve app pages (private area)
+   |    |-- base/                     # Base Blueprint - handles the authentication
+   |    |-- home/                     # Home Blueprint - serve app pages (private area)
    |         |
-   |         |-- templates/                      # UI Kit Pages
-   |               |
-   |               |-- index.html                # Default page
-   |               |-- page-404.html             # Error 404 page
-   |               |-- page-500.html             # Error 500 page
-   |               |-- page-403.html             # Error 403 page
-   |               |-- *.html                    # All other HTML pages
+   |         |-- templates/           # UI Kit Pages
+   |              |
+   |              |-- index.html      # Default page
+   |              |-- page-404.html   # Error 404 page
+   |              |-- page-500.html   # Error 500 page
+   |              |-- page-403.html   # Error 403 page
+   |              |-- *.html          # All other HTML pages
    |
-   |-- requirements.txt                          # Development modules - SQLite storage
-   |-- requirements-mysql.txt                    # Production modules  - Mysql DMBS
-   |-- requirements-pqsql.txt                    # Production modules  - PostgreSql DMBS
+   |-- requirements.txt               # Development modules - SQLite storage
+   |-- requirements-mysql.txt         # Production modules  - Mysql DMBS
+   |-- requirements-pqsql.txt         # Production modules  - PostgreSql DMBS
    |
-   |-- .env                                      # Inject Configuration via Environment
-   |-- config.py                                 # Set up the app
-   |-- run.py                                    # Start the app - WSGI gateway
+   |-- .env                           # Inject Configuration via Environment
+   |-- config.py                      # Set up the app
+   |-- run.py                         # Start the app - WSGI gateway
    |
    |-- ************************************************************************
 ```
