@@ -1,7 +1,8 @@
 {
   "name": "boilerplate-code-flask-dashboard",
+  "mastertemplate": "boilerplate-code-flask-dashboard",
   "version": "0.0.1",
-  "description": "Open-source template project - Flask Dashboard Boilerplate Code.",
+  "description": "Template project - Flask Dashboard Boilerplate Code.",
   "scripts": {
       "start"  : "flask run",
       "shell"  : "flask shell"
@@ -15,7 +16,6 @@
       "email": "support@appseed.us"
   },
   "author": "AppSeed App Generator <support@appseed.us> (https://appseed.us)",
-  "license": "MIT",
   "engines": {
       "node": ">=10.0.0"
   },
