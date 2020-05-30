@@ -1,12 +1,8 @@
 {
   "name": "boilerplate-code-flask-dashboard",
   "mastertemplate": "boilerplate-code-flask-dashboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template project - Flask Dashboard Boilerplate Code.",
-  "scripts": {
-      "start"  : "flask run",
-      "shell"  : "flask shell"
-  },
   "repository": {
       "type": "git",
       "url": "https://github.com/app-generator/boilerplate-code-flask-dashboard"
