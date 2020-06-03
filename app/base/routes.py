@@ -22,10 +22,6 @@ from app.base.util import verify_pass
 def route_default():
     return redirect(url_for('base_blueprint.login'))
 
-@blueprint.route('/error-<error>')
-def route_errors(error):
-    return render_template('errors/{}.html'.format(error))
-
 ## Login & Registration
 
 @blueprint.route('/login', methods=['GET', 'POST'])
