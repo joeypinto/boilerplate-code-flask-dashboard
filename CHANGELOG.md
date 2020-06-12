@@ -1,7 +1,9 @@
 # Change Log
 
 ## [1.0.1] 2020-05-30
-### Improvements
+### Improvements & Bug Fixes
+
+- Patch #Bug - Return a 403 Error for unauthorized access
 - Update Licensing information
 - Add CHANGELOG.md to track all changes
 

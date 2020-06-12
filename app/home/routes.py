@@ -16,6 +16,7 @@ def index():
     return render_template('index.html')
 
 @blueprint.route('/<template>')
+@login_required
 def route_template(template):
 
     try:
