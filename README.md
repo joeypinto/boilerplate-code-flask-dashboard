@@ -20,6 +20,12 @@
 - More [Flask Admin Dashboards](https://appseed.us/admin-dashboards/flask) - index hosted by **[AppSeed](https://appseed.us)**
 - [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
 
+> Projects that use this starter
+
+- [Flask Corona Dark](https://appseed.us/admin-dashboards/flask-dashboard-corona-dark) - [demo](https://flask-dashboard-corona-dark.appseed.us/), [sources](https://github.com/app-generator/flask-dashboard-corona-dark)
+- [Flask DattaAble PRO](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) - [demo](https://flask-dashboard-dattaable-pro.appseed.us/)
+- [Flask Atlantis Dark](https://appseed.us/admin-dashboards/flask-dashboard-atlantis-dark) - [demo](https://flask-dashboard-atlantis-dark.appseed.us/login.html), [sources](https://github.com/app-generator/flask-dashboard-atlantis-dark)
+
 <br />
 
 ## Want more? Go PRO!
