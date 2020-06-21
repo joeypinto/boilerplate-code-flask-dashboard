@@ -16,6 +16,7 @@
 > Links
 
 - [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/) - LIVE Demo
+- [Boierplate Code Flask Dashboard](https://docs.appseed.us/boilerplate-code/flask-dashboard/) - Documentation
 - [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Official product page
 - More [Flask Admin Dashboards](https://appseed.us/admin-dashboards/flask) - index hosted by **[AppSeed](https://appseed.us)**
 - [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
