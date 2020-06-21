@@ -1,4 +1,4 @@
-# [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard)
+# [Flask Dashboard Boilerplate](https://appseed.us/boilerplate-code/flask-dashboard)
 
 > Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Flask](https://palletsprojects.com/p/flask/) - Features:
 
@@ -280,4 +280,4 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 <br />
 
 ---
-[Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+[Flask Dashboard Boilerplate](https://appseed.us/boilerplate-code/flask-dashboard) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
