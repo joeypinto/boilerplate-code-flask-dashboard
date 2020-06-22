@@ -1,5 +1,12 @@
 # Change Log
 
+## Unreleased
+### Improvements
+
+- 2020-06-22 - Added HEROKU support. Impacted files:
+    - runtime.txt - Bump the Python version to 3.6.10
+    - README added new section for HEROKU deployment
+    
 ## [1.0.1] 2020-05-30
 ### Improvements & Bug Fixes
 

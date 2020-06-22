@@ -8,7 +8,7 @@
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**)
 - Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx
+- Deployment scripts: Docker, Gunicorn / Nginx, Heroku
 - **[MIT License](https://github.com/app-generator/license-mit)**
 - Free support via **Github** issues tracker
 - Paid 24/7 Live Support via [Discord](https://discord.gg/fZC6hup).
@@ -203,7 +203,7 @@ The *Home* blueprint handles UI Kit pages for authenticated users. This is the p
 
 ## Deployment
 
-The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
+The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Heroku](https://www.heroku.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
 
 <br />
 
@@ -226,6 +226,41 @@ $ sudo docker-compose pull && sudo docker-compose build && sudo docker-compose u
 ```
 
 Visit `http://localhost:5005` in your browser. The app should be up & running.
+
+<br />
+
+### [Heroku](https://www.heroku.com/)
+---
+
+Steps to deploy on **Heroku**
+
+- [Create a FREE account](https://signup.heroku.com/) on Heroku platform
+- [Install the Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) that match your OS: Mac, Unix or Windows
+- Open a terminal window and authenticate via `heroku login` command
+- Clone the sources and push the project for LIVE deployment
+
+```bash
+$ # Clone the source code:
+$ git clone https://github.com/app-generator/boilerplate-code-flask-dashboard.git
+$ cd boilerplate-code-flask-dashboard
+$
+$ # Check Heroku CLI is installed
+$ heroku -v
+heroku/7.25.0 win32-x64 node-v12.13.0 # <-- All good
+$
+$ # Check Heroku CLI is installed
+$ heroku login
+$ # this commaond will open a browser window - click the login button (in browser)
+$
+$ # Create the Heroku project
+$ heroku create
+$
+$ # Trigger the LIVE deploy
+$ git push heroku master
+$
+$ # Open the LIVE app in browser
+$ heroku open
+```
 
 <br />
 
