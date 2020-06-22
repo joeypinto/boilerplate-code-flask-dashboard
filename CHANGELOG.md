@@ -3,10 +3,14 @@
 ## Unreleased
 ### Improvements
 
+- 2020-06-22 - Guard Flask links with quotes
+    - Sample href="{{ url_for('base_blueprint.login') }}"
+    - Impacted files: login.html, register.html, sidebar.html
+
 - 2020-06-22 - Added HEROKU support. Impacted files:
     - runtime.txt - Bump the Python version to 3.6.10
     - README added new section for HEROKU deployment
-    
+
 ## [1.0.1] 2020-05-30
 ### Improvements & Bug Fixes
 
