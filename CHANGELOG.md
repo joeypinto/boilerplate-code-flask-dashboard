@@ -3,6 +3,9 @@
 ## Unreleased
 ### Improvements
 
+- 2020-08-20 - Added get_segment() helper that detects the current page
+    - Updated files(s): app/home/routes.py
+
 - 2020-06-22 - Guard Flask links with quotes
     - Sample href="{{ url_for('base_blueprint.login') }}"
     - Impacted files: login.html, register.html, sidebar.html
