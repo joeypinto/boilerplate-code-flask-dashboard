@@ -1,7 +1,10 @@
 # Change Log
 
-## Unreleased
-### Improvements
+## [1.0.2] 2020-12-29
+### Improvements & Bug Fixes
+
+- 2020-12-29 - `.env` usage, add logging
+    - Updated files(s): run.py
 
 - 2020-08-20 - Added get_segment() helper that detects the current page
     - Updated files(s): app/home/routes.py
