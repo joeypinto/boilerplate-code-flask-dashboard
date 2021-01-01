@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.3] 2021-01-01
+### Improvements 
+
+- 2021-01-01 - Registration
+    - Hide form on success
+
 ## [1.0.2] 2020-12-29
 ### Improvements & Bug Fixes
 
