@@ -7,22 +7,16 @@
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**), Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx, Heroku
+- Deployment scripts: Docker, Gunicorn / Nginx, HEROKU
 - Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+
+<br />
 
 > Links
 
-- [Boierplate Code Flask Dashboard](https://boilerplate-code-flask-dashboard.appseed.us/) - LIVE Demo
-- [Boierplate Code Flask Dashboard](https://docs.appseed.us/boilerplate-code/flask-dashboard/) - Documentation
-- [Boierplate Code Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Official product page
-- More [Flask Admin Dashboards](https://appseed.us/admin-dashboards/flask) - index hosted by **[AppSeed](https://appseed.us)**
-- [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
-
-> Projects that use this starter
-
-- [Flask Corona Dark](https://appseed.us/admin-dashboards/flask-dashboard-corona-dark) - [demo](https://flask-dashboard-corona-dark.appseed.us/), [sources](https://github.com/app-generator/flask-dashboard-corona-dark)
-- [Flask DattaAble PRO](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) - [demo](https://flask-dashboard-dattaable-pro.appseed.us/)
-- [Flask Atlantis Dark](https://appseed.us/admin-dashboards/flask-dashboard-atlantis-dark) - [demo](https://flask-dashboard-atlantis-dark.appseed.us/login.html), [sources](https://github.com/app-generator/flask-dashboard-atlantis-dark)
+- [Boierplate Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Product page
+- [Boierplate Flask Dashboard - Demo](https://boilerplate-code-flask-dashboard.appseed.us/) - LIVE Demo
+- [Boierplate Flask Dashboard - Docs](https://docs.appseed.us/boilerplate-code/flask-dashboard/) - Documentation
 
 <br />
 
