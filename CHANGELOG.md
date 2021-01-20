@@ -1,7 +1,7 @@
 # Change Log
 
-## Unreleased 
-### Improvements 
+## [1.0.4] 2021-01-20
+### Improvements
 
 - Remove `shutdown` route from Base Blueprint - Updated file(s):
     - `app\base\routes.py`
