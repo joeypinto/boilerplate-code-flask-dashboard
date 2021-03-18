@@ -4,7 +4,7 @@
 
 - UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
 - DBMS: SQLite, PostgreSQL (production) 
-- DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
+- DB Tools: SQLAlchemy ORM, Flask-Migrate (schema migrations)
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**), Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx, HEROKU

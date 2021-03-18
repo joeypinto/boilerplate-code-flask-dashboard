@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.5] 2021-03-18
+### Improvements
+
+- Freeze used versions in `requirements.txt`
+    - flask_sqlalchemy = 2.4.4
+    - sqlalchemy = 1.3.23
+
 ## [1.0.4] 2021-01-20
 ### Improvements
 
