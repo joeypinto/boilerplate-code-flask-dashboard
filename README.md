@@ -31,7 +31,7 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 <br />
 <br />
 
-![Boierplate Code Flask Dashboard - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/boilerplate-code-flask-dashboard/master/media/boilerplate-code-flask-dashboard-screen.png)
+![Boierplate Code Flask Dashboard - Template project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/131141424-f5b46569-82e3-476e-b4f5-6b55b4f626dc.png)
 
 <br />
 
