@@ -8,9 +8,9 @@ Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
 
 The product should provide all features listed below:
 
-- **Status: DONE** - Updated dependencies (all [packages](https://github.com/app-generator/boilerplate-code-flask-dashboard/blob/master/requirements.txt))
+- **Status: WIP** - Updated dependencies (all [packages](https://github.com/app-generator/boilerplate-code-flask-dashboard/blob/master/requirements.txt))
   - Flask, Flask-restX (latest stable versions)
-- **Status: DONE** - Pythonic Footprint: 
+- **Status: WIP** - Pythonic Footprint: 
   - Better Code formatting
   - Improved Files organization
   - Optimized imports
