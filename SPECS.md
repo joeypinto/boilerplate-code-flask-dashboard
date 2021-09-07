@@ -8,15 +8,25 @@ Copyright (c) 2019 - present [AppSeed](http://appseed.us/)
 
 The product should provide all features listed below:
 
-- Updated dependencies
-- Pythonic Footprint
-- Improved Authentication: Password reset, Email confirmation on register
-- API via Flask-RestX
-- Data Tables - manages paginated information 
-- Sample Charts
-- Social Login via Google and Github
-- Deployment: Docker, HEROKU, AWS Ec2, Google Cloud 
-- Payments: One-time payments via [Stripe Checkout](https://stripe.com/payments/checkout)
+- **Status: DONE** - Updated dependencies (all [packages](https://github.com/app-generator/boilerplate-code-flask-dashboard/blob/master/requirements.txt))
+  - Flask, Flask-restX (latest stable versions)
+- **Status: DONE** - Pythonic Footprint: 
+  - Better Code formatting
+  - Improved Files organization
+  - Optimized imports
+  - Docker Scripts Update
+- **Status: WIP** - Improved Authentication: Extended user model, Password reset, Email confirmation on register
+  - New user Fields: all information presented in the `settings` page:
+    - First, Last Name
+    - Birthday, Gender, Email, Phone   
+    - Address, Number, City, ZIP
+    - User Photo
+- **Status: WIP** - API via Flask-RestX
+- **Status: WIP** - Data Tables - manages paginated information 
+- **Status: WIP** - Sample Charts
+- **Status: WIP** - Social Login via Google and Github
+- **Status: WIP** - Deployment: Docker, HEROKU, AWS Ec2, Google Cloud 
+- **Status: WIP** - Payments: One-time payments via [Stripe Checkout](https://stripe.com/payments/checkout)
 
 <br />
 
@@ -46,7 +56,7 @@ The codebase should implement the best practices adopted by the Python community
 
 <br />
 
-**4# - API via DRF**
+**4# - API via Flask-restX**
 
 > STATUS: **Work in progress**
 
@@ -58,7 +68,7 @@ Implemented in a separate blueprint `api` - Features:
 - `api/transactions/get/id` - get specific transaction 
 - `api/transactions/get` - get all transactions 
 
-> Existing sample project with similar features: [Django API Sample](https://github.com/app-generator/api-server-django-sample)
+> Existing **Django** Sample project with similar features: [Django API Sample](https://github.com/app-generator/api-server-django-sample)
 
 The information is saved using a `Transaction` model:
 
@@ -85,7 +95,7 @@ Implemented in a separate blueprint `datatables` - Features:
 - Inline rows edit activated at double click
 - Pagination and Search
 
-> Existing sample project with similar features: [Django Datatables Sample](https://github.com/app-generator/django-datatables-sample)
+> Existing **Django** sample project with similar features: [Django Datatables Sample](https://github.com/app-generator/django-datatables-sample)
 
 <br />
 
