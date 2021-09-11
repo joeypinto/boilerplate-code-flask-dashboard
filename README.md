@@ -107,8 +107,12 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |    |    |    |-- base.html             # Used by common pages
    |    |    |
    |    |    |-- accounts/                  # Authentication pages
-   |    |         |-- login.html            # Login page
-   |    |         |-- register.html         # Registration page   |    |
+   |    |    |    |-- login.html            # Login page
+   |    |    |    |-- register.html         # Registration page   |    |
+   |    |    |
+   |    |   index.html                      # Index page
+   |    |   page-404.html                   # 404 Page 
+   |    |    *.html                         # All other pages
    |    |    
    |   config.py                 # Set up the app
    |    __init__.py              # Initialize the app
