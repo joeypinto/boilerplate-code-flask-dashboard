@@ -108,10 +108,10 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |    |    |
    |    |    |-- accounts/                  # Authentication pages
    |    |    |    |-- login.html            # Login page
-   |    |    |    |-- register.html         # Registration page   |    |
+   |    |    |    |-- register.html         # Registration page 
    |    |    |
-   |    |   index.html                      # Index page
-   |    |   page-404.html                   # 404 Page 
+   |    |  index.html                       # Index page
+   |    |  page-404.html                    # 404 Page 
    |    |    *.html                         # All other pages
    |    |    
    |   config.py                 # Set up the app
