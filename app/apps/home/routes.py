@@ -27,9 +27,6 @@ def route_template(template):
 
         # Detect the current page
         segment = get_segment(request)
-        print(request)
-        print(segment)
-        print(template)
 
         # Serve the file (if exists) from app/templates/home/FILE.html
         return render_template("home/" + template, segment=segment)
