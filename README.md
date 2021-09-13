@@ -110,7 +110,7 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |    |    |    |-- login.html            # Login page
    |    |    |    |-- register.html         # Registration page 
    |    |    |
-   |    |    |-- home/                      # Authentication pages
+   |    |    |-- home/                      # UI Kit pages
    |    |         |-- index.html            # Index page
    |    |         |-- page-404.html         # 404 Page 
    |    |         |-- *.html                # all other pages 
