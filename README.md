@@ -110,25 +110,26 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |    |    |    |-- login.html            # Login page
    |    |    |    |-- register.html         # Registration page 
    |    |    |
-   |    |  index.html                       # Index page
-   |    |  page-404.html                    # 404 Page 
-   |    |    *.html                         # All other pages
+   |    |    |-- home/                      # Authentication pages
+   |    |         |-- index.html            # Index page
+   |    |         |-- page-404.html         # 404 Page 
+   |    |         |-- *.html                # all other pages 
    |    |    
-   |   config.py                 # Set up the app
-   |    __init__.py              # Initialize the app
+   |  config.py                             # Set up the app
+   |    __init__.py                         # Initialize the app
    |
-   |-- requirements.txt          # Development modules - SQLite storage
-   |-- requirements-mysql.txt    # Production modules  - Mysql DMBS
-   |-- requirements-pqsql.txt    # Production modules  - PostgreSql DMBS
+   |-- requirements.txt                     # Development modules - SQLite storage
+   |-- requirements-mysql.txt               # Production modules  - Mysql DMBS
+   |-- requirements-pqsql.txt               # Production modules  - PostgreSql DMBS
    |
-   |-- Dockerfile                # Deployment
-   |-- docker-compose.yml        # Deployment
-   |-- gunicorn-cfg.py           # Deployment   
-   |-- nginx                     # Deployment
-   |    |-- appseed-app.conf     # Deployment 
+   |-- Dockerfile                           # Deployment
+   |-- docker-compose.yml                   # Deployment
+   |-- gunicorn-cfg.py                      # Deployment   
+   |-- nginx                                # Deployment
+   |    |-- appseed-app.conf                # Deployment 
    |
-   |-- .env                      # Inject Configuration via Environment
-   |-- run.py                    # Start the app - WSGI gateway
+   |-- .env                                 # Inject Configuration via Environment
+   |-- run.py                               # Start the app - WSGI gateway
    |
    |-- ************************************************************************
 ```
