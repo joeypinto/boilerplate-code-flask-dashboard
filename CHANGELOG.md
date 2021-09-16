@@ -1,5 +1,17 @@
 # Change Log
 
+## [2.0.0] 2021-09-16
+### Improvements & Fixes
+
+- Dependencies update (all packages) 
+  - Flask==2.0.1 (latest stable version)
+- Better Code formatting
+- Improved Files organization
+- Optimize imports
+- Docker Scripts Update
+- Gulp Tooling  (SASS Compilation)
+  - Minor fixes
+
 ## [1.0.7] 2021-08-27
 ### Improvements
 

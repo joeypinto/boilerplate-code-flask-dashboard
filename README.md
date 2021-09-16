@@ -1,7 +1,11 @@
 # [Flask Dashboard Boilerplate](https://appseed.us/boilerplate-code/flask-dashboard)
 
-> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Flask](https://palletsprojects.com/p/flask/) - Features:
+> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in Flask - Features:
 
+<br />
+
+- Up-to-date [dependencies](./requirements.txt): **Flask 2.0.1**
+- [SCSS compilation](#recompile-css) via **Gulp**
 - UI Kit: **Volt Dashboard** (Free Version) provided by **Themesberg**
 - DBMS: SQLite, PostgreSQL (production) 
 - DB Tools: SQLAlchemy ORM, Flask-Migrate (schema migrations)
@@ -14,8 +18,8 @@
 
 > Links
 
-- [Boierplate Flask Dashboard](https://appseed.us/boilerplate-code/flask-dashboard) - Product page
-- [Boierplate Flask Dashboard - Demo](https://boilerplate-code-flask-dashboard.appseed.us/) - LIVE Demo
+- [Boierplate Flask Dashboard](https://appseed.us/admin-dashboards/flask-dashboard-volt) - Product page
+- [Boierplate Flask Dashboard - Demo](https://flask-volt-dashboard.appseed-srv1.com/) - LIVE Demo
 - [Boierplate Flask Dashboard - Docs](https://docs.appseed.us/boilerplate-code/flask-dashboard/) - Documentation
 
 <br />
@@ -87,20 +91,25 @@ The project is coded using blueprints, app factory pattern, dual configuration p
 ```bash
 < PROJECT ROOT >
    |
-   |-- apps/                                # Implements app logic
-   |    |-- authentication/                 # Auth Blueprint - handles the authentication
-   |    |-- home/                           # Home Blueprint - serve UI Kit pages
+   |-- apps/
+   |    |
+   |    |-- home/                          # A simple app that serve HTML files
+   |    |    |-- routes.py                 # Define app routes
+   |    |
+   |    |-- authentication/                # Handles auth routes (login and register)
+   |    |    |-- routes.py                 # Define authentication routes  
+   |    |    |-- models.py                 # Defines models  
+   |    |    |-- forms.py                  # Define auth forms (login and register) 
    |    |
    |    |-- static/
-   |    |    |-- <css, JS, images>          # CSS files, Javascripts files
+   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
    |    |
-   |    |-- templates/                      # Templates used to render pages
-   |    |    |
-   |    |    |-- includes/                  #
-   |    |    |    |-- navigation.html       # Top menu component
-   |    |    |    |-- sidebar.html          # Sidebar component
-   |    |    |    |-- footer.html           # App Footer
-   |    |    |    |-- scripts.html          # Scripts common to all pages
+   |    |-- templates/                     # Templates used to render pages
+   |    |    |-- includes/                 # HTML chunks and components
+   |    |    |    |-- navigation.html      # Top menu component
+   |    |    |    |-- sidebar.html         # Sidebar component
+   |    |    |    |-- footer.html          # App Footer
+   |    |    |    |-- scripts.html         # Scripts common to all pages
    |    |    |
    |    |    |-- layouts/                   # Master pages
    |    |    |    |-- base-fullscreen.html  # Used by Authentication pages
@@ -108,12 +117,12 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |    |    |
    |    |    |-- accounts/                  # Authentication pages
    |    |    |    |-- login.html            # Login page
-   |    |    |    |-- register.html         # Registration page 
+   |    |    |    |-- register.html         # Register page
    |    |    |
-   |    |    |-- home/                      # UI Kit pages
+   |    |    |-- home/                      # UI Kit Pages
    |    |         |-- index.html            # Index page
-   |    |         |-- page-404.html         # 404 Page 
-   |    |         |-- *.html                # all other pages 
+   |    |         |-- 404-page.html         # 404 page
+   |    |         |-- *.html                # All other pages
    |    |    
    |  config.py                             # Set up the app
    |    __init__.py                         # Initialize the app
@@ -166,7 +175,7 @@ To recompile SCSS files, follow this setup:
 **Step #2** - Change the working directory to `assets` folder
 
 ```bash
-$ cd app/base/static/assets
+$ cd apps/static/assets
 ```
 
 <br />
@@ -215,7 +224,7 @@ $ cd boilerplate-code-flask-dashboard
 $ sudo docker-compose pull && sudo docker-compose build && sudo docker-compose up -d
 ```
 
-Visit `http://localhost:5005` in your browser. The app should be up & running.
+Visit `http://localhost:85` in your browser. The app should be up & running.
 
 <br />
 
