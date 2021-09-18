@@ -4,8 +4,8 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from flask_wtf import FlaskForm
-from wtforms import TextField, PasswordField
-from wtforms.validators import Email, DataRequired
+from wtforms import TextField, PasswordField, HiddenField
+from wtforms.validators import Email, DataRequired, EqualTo
 
 # login and registration
 
@@ -29,3 +29,20 @@ class CreateAccountForm(FlaskForm):
     password = PasswordField('Password',
                              id='pwd_create',
                              validators=[DataRequired()])
+
+
+class ForgotPasswordForm(FlaskForm):
+    email = TextField('Email',
+                      id='email_create',
+                      validators=[DataRequired(), Email()])
+
+
+class ResetPasswordForm(FlaskForm):
+    email_token_key = HiddenField()
+    email = HiddenField()
+    password = PasswordField('New Password',
+                             id='pwd_create',
+                             validators=[DataRequired()])
+    confirm_password = PasswordField(u'Confirm Password again',
+                                     [EqualTo('password',
+                                              message="Passwords don't match")])

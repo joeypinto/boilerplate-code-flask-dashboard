@@ -3,6 +3,8 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from uuid import uuid4
+
 from flask import render_template, redirect, request, url_for
 from flask_login import (
     current_user,
@@ -12,10 +14,11 @@ from flask_login import (
 
 from apps import db, login_manager
 from apps.authentication import blueprint
-from apps.authentication.forms import LoginForm, CreateAccountForm
+from apps.authentication.forms import (LoginForm, CreateAccountForm,
+                                       ForgotPasswordForm, ResetPasswordForm)
 from apps.authentication.models import Users
 
-from apps.authentication.util import verify_pass
+from apps.authentication.util import verify_pass, hash_pass
 
 
 @blueprint.route('/')
@@ -90,6 +93,67 @@ def register():
 
     else:
         return render_template('accounts/register.html', form=create_account_form)
+
+
+@blueprint.route('/forgot-password', methods=['GET', 'POST'])
+def forgot_password():
+    forgot_password_form = ForgotPasswordForm(request.form)
+    if 'forgot-password' in request.form:
+
+        # read form data
+        email = request.form['email']
+
+        # Locate user
+        user = Users.query.filter_by(email=email).first()
+
+        # Check user exists
+        if user:
+
+            user.email_token_key = str(uuid4())
+            db.session.add(user)
+            db.session.commit()
+
+            # create a set_password link to send in email
+            email_url = url_for('authentication_blueprint.reset_password',
+                                email=user.email,
+                                email_token_key=user.email_token_key,
+                                _external=True)
+            print(email_url)  # todo: send email
+
+            return render_template('registration/forgot_password.html',
+                                   msg='Instructions sent successfully on your email <br> link is: ' + email_url,
+                                   success=True,
+                                   form=forgot_password_form)
+
+        return render_template('registration/forgot_password.html',
+                               msg='No user exists with this email',
+                               success=False,
+                               form=forgot_password_form)
+
+    return render_template('registration/forgot_password.html', form=forgot_password_form)
+
+
+def update_password(email, email_token_key, password):
+    user = Users.query.filter_by(email_token_key=email_token_key, email=email).first()
+    user.password = hash_pass(password)
+    user.email_token_key = None
+    db.session.add(user)
+    db.session.commit()
+
+
+@blueprint.route('/reset-password', methods=['GET', 'POST'])
+def reset_password():
+
+    reset_password_form = ResetPasswordForm(email_token_key=request.values["email_token_key"],
+                                            email=request.values["email"])
+
+    if 'reset-password' in request.form:
+        update_password(reset_password_form.email.data,
+                        reset_password_form.email_token_key.data,
+                        reset_password_form.password.data)
+        return redirect(url_for("authentication_blueprint.login", msg="Your password has been changed, log in again"))
+
+    return render_template("registration/reset_password.html", form=reset_password_form)
 
 
 @blueprint.route('/logout')
