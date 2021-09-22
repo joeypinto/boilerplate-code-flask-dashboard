@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from uuid import uuid4
+from itsdangerous import URLSafeSerializer
 
 from flask import render_template, redirect, request, url_for
 from flask_login import (
@@ -19,6 +20,9 @@ from apps.authentication.forms import (LoginForm, CreateAccountForm,
 from apps.authentication.models import Users
 
 from apps.authentication.util import verify_pass, hash_pass
+
+from apps.config import Config
+from apps.authentication.email import send_email
 
 
 @blueprint.route('/')
@@ -39,6 +43,12 @@ def login():
 
         # Locate user
         user = Users.query.filter_by(username=username).first()
+
+        if not user.account_status:
+            # Email not confirmed
+            return render_template('accounts/login.html',
+                                   msg='Please verify your email address!',
+                                   form=login_form)
 
         # Check the password
         if user and verify_pass(password, user.password):
@@ -83,16 +93,58 @@ def register():
 
         # else we can create the user
         user = Users(**request.form)
-        db.session.add(user)
-        db.session.commit()
 
-        return render_template('accounts/register.html',
-                               msg='User created please <a href="/login">login</a>',
-                               success=True,
-                               form=create_account_form)
+        # check if confirmation email to be sent or not for activating account
+        if Config.EMAIL_CONFIRMATION_REQUIRED:
+            user.account_status = False
+            confirm_user_mail(username, email)
+
+            db.session.add(user)
+            db.session.commit()
+
+            return render_template('accounts/register.html',
+                                   msg='User created, Please confirm your email',
+                                   success=True,
+                                   form=create_account_form)
+
+        else:
+            user.account_status = True
+            db.session.add(user)
+            db.session.commit()
+
+            return render_template('accounts/register.html',
+                                   msg='User created please <a href="/login">login</a>',
+                                   success=True,
+                                   form=create_account_form)
 
     else:
         return render_template('accounts/register.html', form=create_account_form)
+
+
+def confirm_user_mail(username, email):
+
+    # create a confirm_account link to send in email
+    s = URLSafeSerializer('serliaizer_code')
+    key = s.dumps([username, email])
+    url = url_for('authentication_blueprint.confirm_account', secretstring=key, _external=True)
+
+    subject = 'Confirm your account'
+    body_content = "Please activate your account. <a href=" + url + ">Click to Activate</a>"
+
+    send_email(subject, body_content, email)
+
+
+@blueprint.route('/confirm_account/<secretstring>', methods=['GET', 'POST'])
+def confirm_account(secretstring):
+    s = URLSafeSerializer('serliaizer_code')
+    username, email = s.loads(secretstring)
+
+    user = Users.query.filter_by(username=username).first()
+    user.account_status = True
+    db.session.add(user)
+    db.session.commit()
+
+    return redirect(url_for("authentication_blueprint.login", msg="Your account was confirmed succsessfully"))
 
 
 @blueprint.route('/forgot-password', methods=['GET', 'POST'])
@@ -114,14 +166,18 @@ def forgot_password():
             db.session.commit()
 
             # create a set_password link to send in email
-            email_url = url_for('authentication_blueprint.reset_password',
-                                email=user.email,
-                                email_token_key=user.email_token_key,
-                                _external=True)
-            print(email_url)  # todo: send email
+            url = url_for('authentication_blueprint.reset_password',
+                          email=user.email,
+                          email_token_key=user.email_token_key,
+                          _external=True)
+
+            subject = 'Reset your password'
+            body_content = "Please reset your password. <a href=" + url + ">Click to Reset</a>"
+
+            send_email(subject, body_content, email)
 
             return render_template('registration/forgot_password.html',
-                                   msg='Instructions sent successfully on your email <br> link is: ' + email_url,
+                                   msg='Instructions sent successfully on your email',
                                    success=True,
                                    form=forgot_password_form)
 
