@@ -16,7 +16,9 @@ class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(64), unique=True)
+    email_token_key = db.Column(db.String(64))
     password = db.Column(db.LargeBinary)
+    account_status = db.Column(db.Boolean, default=False)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

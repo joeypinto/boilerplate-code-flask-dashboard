@@ -17,6 +17,17 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # Check if Email confirmation is required or not
+    EMAIL_CONFIRMATION_REQUIRED = False  # Or True, if emails to be sent
+
+    # SMTP server credentials
+    MAIL_SERVER = ""
+    MAIL_PORT = 0
+    MAIL_USERNAME = ""
+    MAIL_PASSWORD = ""
+    MAIL_USE_TSL = True
+    MAIL_USE_SSL = False
+
 
 class ProductionConfig(Config):
     DEBUG = False
