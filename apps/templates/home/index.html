@@ -89,13 +89,10 @@
                             <a href="dashboard.html" class="nav-link">Dashboard</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a href="/page-sign-in.html" class="nav-link">Login</a>
+                            <a href="/settings.html" class="nav-link">Settings</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a href="/page-sign-up.html" class="nav-link">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/page-lock.html" class="nav-link">Lock</a>
+                            <a href="{{ url_for('authentication_blueprint.logout') }}" class="nav-link">Logout</a>
                         </li>
                     </ul>
                 </div>
