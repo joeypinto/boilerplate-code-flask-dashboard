@@ -6,6 +6,8 @@ Copyright (c) 2019 - present AppSeed.us
 from uuid import uuid4
 from itsdangerous import URLSafeSerializer
 
+from flask import current_app
+
 from flask import render_template, redirect, request, url_for
 from flask_login import (
     current_user,
@@ -24,11 +26,9 @@ from apps.authentication.util import verify_pass, hash_pass
 from apps.config import Config
 from apps.authentication.email import send_email
 
-
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('authentication_blueprint.login'))
-
 
 # Login & Registration
 
@@ -44,10 +44,10 @@ def login():
         # Locate user
         user = Users.query.filter_by(username=username).first()
 
-        if not user.account_status:
+        if user and not user.account_status:
             # Email not confirmed
             return render_template('accounts/login.html',
-                                   msg='Please verify your email address!',
+                                   msg='Inactive account - Please confirm email address',
                                    form=login_form)
 
         # Check the password
@@ -64,6 +64,7 @@ def login():
     if not current_user.is_authenticated:
         return render_template('accounts/login.html',
                                form=login_form)
+
     return redirect(url_for('home_blueprint.index'))
 
 
@@ -74,6 +75,7 @@ def register():
 
         username = request.form['username']
         email = request.form['email']
+        msg = None   
 
         # Check usename exists
         user = Users.query.filter_by(username=username).first()
@@ -96,14 +98,19 @@ def register():
 
         # check if confirmation email to be sent or not for activating account
         if Config.EMAIL_CONFIRMATION_REQUIRED:
-            user.account_status = False
-            confirm_user_mail(username, email)
+
+            user.account_status = False 
+
+            if confirm_user_mail(username, email):
+                msg='User created, Please confirm your email'
+            else:
+                msg='User created, but confirmation email cannot be sent.'     
 
             db.session.add(user)
             db.session.commit()
 
             return render_template('accounts/register.html',
-                                   msg='User created, Please confirm your email',
+                                   msg=msg,
                                    success=True,
                                    form=create_account_form)
 
@@ -131,7 +138,7 @@ def confirm_user_mail(username, email):
     subject = 'Confirm your account'
     body_content = "Please activate your account. <a href=" + url + ">Click to Activate</a>"
 
-    send_email(subject, body_content, email)
+    return send_email(subject, body_content, email)
 
 
 @blueprint.route('/confirm_account/<secretstring>', methods=['GET', 'POST'])
@@ -144,8 +151,10 @@ def confirm_account(secretstring):
     db.session.add(user)
     db.session.commit()
 
-    return redirect(url_for("authentication_blueprint.login", msg="Your account was confirmed succsessfully"))
-
+    #return redirect(url_for("authentication_blueprint.login", msg="Your account was confirmed succsessfully"))
+    return render_template('accounts/login.html',
+                        msg='Account confirmed successfully.',
+                        form=LoginForm())
 
 @blueprint.route('/forgot-password', methods=['GET', 'POST'])
 def forgot_password():
@@ -172,7 +181,7 @@ def forgot_password():
                           _external=True)
 
             subject = 'Reset your password'
-            body_content = "Please reset your password. <a href=" + url + ">Click to Reset</a>"
+            body_content = "Please reset your password. <a href='" + url + "'>Click to Reset</a>"
 
             send_email(subject, body_content, email)
 
@@ -188,29 +197,50 @@ def forgot_password():
 
     return render_template('registration/forgot_password.html', form=forgot_password_form)
 
-
 def update_password(email, email_token_key, password):
-    user = Users.query.filter_by(email_token_key=email_token_key, email=email).first()
-    user.password = hash_pass(password)
-    user.email_token_key = None
-    db.session.add(user)
-    db.session.commit()
 
+    user = Users.query.filter_by(email_token_key=email_token_key, email=email).first()
+
+    if user:
+        user.password = hash_pass(password)
+        user.email_token_key = None
+        db.session.add(user)
+        db.session.commit()
+        return True
+    else:
+        return False    
 
 @blueprint.route('/reset-password', methods=['GET', 'POST'])
 def reset_password():
 
-    reset_password_form = ResetPasswordForm(email_token_key=request.values["email_token_key"],
-                                            email=request.values["email"])
+    email_token_key=request.values["email_token_key"]
+    email=request.values["email"]
 
-    if 'reset-password' in request.form:
-        update_password(reset_password_form.email.data,
-                        reset_password_form.email_token_key.data,
-                        reset_password_form.password.data)
-        return redirect(url_for("authentication_blueprint.login", msg="Your password has been changed, log in again"))
+    current_app.logger.info('RESET_PASS -> EMAIL: ' + email )
+    current_app.logger.info('RESET_PASS -> TOKEN: ' + email_token_key )
 
-    return render_template("registration/reset_password.html", form=reset_password_form)
+    user = Users.query.filter_by(email_token_key=email_token_key, email=email).first()
+    if user:
+        reset_password_form = ResetPasswordForm(email_token_key=email_token_key,
+                                                email=email)
 
+        msg=None     
+        if 'reset-password' in request.form:
+            
+            if update_password(reset_password_form.email.data,
+                               reset_password_form.email_token_key.data,
+                               reset_password_form.password.data):
+
+                msg='Password successfully updated.'
+            else:
+                msg='Error updating password.'
+
+            #return redirect(url_for("authentication_blueprint.login", msg="Your password has been changed, log in again"))
+            return render_template('accounts/login.html',
+                        msg=msg,
+                        form=LoginForm())
+
+    return render_template("registration/reset_password.html", form=ResetPasswordForm(email_token_key=email_token_key, email=email))
 
 @blueprint.route('/logout')
 def logout():
