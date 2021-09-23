@@ -136,7 +136,7 @@ def confirm_user_mail(username, email):
     url = url_for('authentication_blueprint.confirm_account', secretstring=key, _external=True)
 
     subject = 'Confirm your account'
-    body_content = "Please activate your account. <a href=" + url + ">Click to Activate</a>"
+    body_content = "Please activate your account. <a href='" + url + "'>Click to Activate</a>"
 
     return send_email(subject, body_content, email)
 
