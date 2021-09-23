@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.1] 2021-09-23
+### Improvements 
+
+- Authentication improvements
+  - Email Confirmation on Register (optional via config)
+  - Password Recovery Mechanism
+
 ## [2.0.0] 2021-09-16
 ### Improvements & Fixes
 

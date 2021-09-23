@@ -7,12 +7,13 @@
 - Up-to-date [dependencies](./requirements.txt): **Flask 2.0.1**
 - [SCSS compilation](#recompile-css) via **Gulp**
 - UI Kit: **Volt Dashboard** (Free Version) provided by **Themesberg**
-- DBMS: SQLite, PostgreSQL (production) 
-- DB Tools: SQLAlchemy ORM, Flask-Migrate (schema migrations)
+- DBMS & Tools: SQLite / PostgreSQL / SQLAlchemy ORM, Flask-Migrate 
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**), Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx, HEROKU
-- Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
+- Features (full ROADMAP [here](https://github.com/app-generator/boilerplate-code-flask-dashboard/issues/8)) 
+  - Email Confirmation on Register (optional via config)
+  - Password Recovery
 
 <br />
 
