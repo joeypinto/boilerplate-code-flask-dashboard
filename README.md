@@ -14,6 +14,8 @@
 - Features (full ROADMAP [here](https://github.com/app-generator/boilerplate-code-flask-dashboard/issues/8)) 
   - Email Confirmation on Register (optional via config)
   - Password Recovery
+  - Edit profile - authenticated users are able to edit thier profile:
+    - First/Last name, ZIP Code, Country, Profile Photo 
 
 <br />
 
