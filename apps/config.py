@@ -17,6 +17,10 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # Profile image upload
+    UPLOAD_FOLDER = "/static/uploads/"
+    MAX_CONTENT_LENGTH = 1024 * 1024
+
     # Check if Email confirmation is required or not
     EMAIL_CONFIRMATION_REQUIRED = False  # Or True, if emails to be sent
 
