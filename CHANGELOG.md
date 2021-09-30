@@ -1,5 +1,13 @@
 # Change Log
 
+## Unreleased 
+### Improvements 
+
+- 20210930 - Edit profile 
+  - Authenticated users are able to edit their profile
+    - Name, Surname, Address, Country, ZIP Code
+    - Upload a profile image. 
+
 ## [2.0.1] 2021-09-23
 ### Improvements 
 
