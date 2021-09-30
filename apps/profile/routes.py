@@ -25,7 +25,7 @@ def profile_photo(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
-@blueprint.route('/settings', methods=['GET', 'POST'])
+@blueprint.route('/settings.html', methods=['GET', 'POST'])
 @login_required
 def settings():
 
