@@ -27,18 +27,32 @@
 
 <br />
 
-## Want more? Go PRO!
+> Roadmap as specified by the product [SPECS](https://github.com/app-generator/boilerplate-code-django-dashboard/blob/master/SPECS.md)
 
-PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
-
-| [Flask Datta PRO](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) | [Flask Material PRO](https://appseed.us/admin-dashboards/flask-dashboard-material-pro) | [Flask Volt PRO](https://appseed.us/admin-dashboards/flask-dashboard-volt-pro) |
-| --- | --- | --- |
-| [![Flask Datta PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-dattaable-pro/master/media/flask-dashboard-dattaable-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) | [![Flask Material PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-material-pro/master/media/flask-dashboard-material-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-material-pro) | [![Flask Volt PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-volt-pro/master/media/flask-dashboard-volt-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-volt-pro)
+- [x] **Updated dependencies**
+- [x] **Pythonic Footprint**
+- [x] **Improved Authentication**: 
+  - [x] Password reset
+  - [x] Email confirmation on register
+  - [x] Extended user model
+    - [x] First, Last Name
+    - [x] Birthday, Gender, Email, Phone
+    - [x] User Photo
+- [WIP] API via Flask-RestX
+- [WIP] Data Tables - manages paginated information 
+- [WIP] Sample Charts
+- [WIP] Social Login via Google and Github
+- [WIP] Deployment: 
+  - [x] Docker 
+  - HEROKU 
+  - AWS Ec2 
+  - Google Cloud 
+  - Azure 
+- [WIP] Payments: One-time payments via [Stripe Checkout](https://stripe.com/payments/checkout)
 
 <br />
-<br />
 
-![Boierplate Code Flask Dashboard - Template project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/131141512-e9597b23-e044-4ed6-be61-98a3f2c5bcb9.png)
+![Boierplate Code Django Dashboard - Template project provided by AppSeed.](https://user-images.githubusercontent.com/51070104/132288100-0c65159f-71a6-41f0-9f55-9544916385ae.jpg)
 
 <br />
 
