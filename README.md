@@ -27,7 +27,7 @@
 
 <br />
 
-> **[Product Roadmap](https://github.com/app-generator/boilerplate-code-django-dashboard/blob/master/SPECS.md)**
+## **[Product Roadmap](https://github.com/app-generator/boilerplate-code-flask-dashboard/blob/master/SPECS.md)**
 
 - [x] **Updated dependencies**
 - [x] **Pythonic Footprint**
