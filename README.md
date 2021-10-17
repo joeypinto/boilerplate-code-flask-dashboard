@@ -11,11 +11,7 @@
 - Modular design with **Blueprints**
 - Session-Based authentication (via **flask_login**), Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx, HEROKU
-- Features (full ROADMAP [here](https://github.com/app-generator/boilerplate-code-flask-dashboard/issues/8)) 
-  - Email Confirmation on Register (optional via config)
-  - Password Recovery
-  - Edit profile - authenticated users are able to edit thier profile:
-    - First/Last name, ZIP Code, Country, Profile Photo 
+- Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
 <br />
 
