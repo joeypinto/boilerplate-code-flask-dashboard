@@ -34,8 +34,12 @@
     - [x] First, Last Name
     - [x] Birthday, Gender, Email, Phone
     - [x] User Photo
+- [WIP] `Data Tables` - manages paginated information
+  - [WIP] Data load via `admin`
+  - [WIP] Pagination, Inline edit via Ajax
+  - [WIP] Simple Search
+  - [WIP] Export `PDF`/`xls`: one page, multiple pages, filtered by `search` 
 - [WIP] `API` via Flask-RestX
-- [WIP] `Data Tables` - manages paginated information 
 - [WIP] `Sample Charts`
 - [WIP] `Social Login`
   - [WIP] *Google*
