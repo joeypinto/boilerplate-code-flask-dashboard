@@ -14,8 +14,8 @@ from apps.datatables.util import set_pagination
 from apps.datatables.forms import DatatableForm
 
 
-@blueprint.route('/data.html')
-def data():
+@blueprint.route('/transactions.html')
+def transactions():
 
     search = request.args.get("search")
     if search:
@@ -51,10 +51,9 @@ def edit(id):
         db.session.add(data)
         db.session.commit()
 
-        return redirect(url_for('datatables_blueprint.data'))
+        return redirect(url_for('datatables_blueprint.transactions'))
 
     return render_template('datatables/edit.html', form=form, data=data, segment="datatables")
-
 
 
 @blueprint.route('/edit_row/<id>', methods=["GET", "PUT"])
@@ -74,9 +73,6 @@ def edit_row(id):
         if "name" in request.form:
             data.name = request.form["name"]
             new_data_available = True
-        if "type" in request.form:
-            data.type = request.form["type"]
-            new_data_available = True
 
         if new_data_available:
 
@@ -90,7 +86,6 @@ def edit_row(id):
         updated_data = Data.query.get(id)
         edit_row = render_template('datatables/edit_row.html', form=None, data=updated_data)
         return jsonify({'valid': 'warning', 'message': 'Error Occurred. Please try again.', 'edit_row': edit_row})
-
 
     data = Data.query.get(id)
     form = DatatableForm(obj=data)
@@ -115,13 +110,12 @@ def row_delete(id):
     return jsonify(response)
 
 
-
 @blueprint.route('/row_delete/<id>/single', methods=["DELETE"])
 def row_delete_single(id):
     data = Data.query.get(id)
     db.session.delete(data)
     db.session.commit()
 
-    redirect_url = url_for('datatables_blueprint.data')
+    redirect_url = url_for('datatables_blueprint.transactions')
     response = {'valid': 'success', 'message': 'Item deleted successfully', 'redirect_url': redirect_url}
     return jsonify(response)

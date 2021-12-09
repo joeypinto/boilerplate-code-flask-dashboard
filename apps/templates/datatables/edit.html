@@ -18,10 +18,10 @@
                       </a>
                   </li>
                   <li class="breadcrumb-item"><a href="#">Volt</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Datatables</li>
+                  <li class="breadcrumb-item active" aria-current="page">Transactions</li>
               </ol>
           </nav>
-          <h2 class="h4">Edit Data</h2>
+          <h2 class="h4">Edit Transaction</h2>
           <p class="mb-0">Your web analytics dashboard template.</p>
       </div>
   </div>
@@ -36,7 +36,7 @@
                           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                       </svg>
                   </span>
-                  <form action="{{ url_for('datatables_blueprint.data') }}" method="get">
+                  <form action="{{ url_for('datatables_blueprint.transactions') }}" method="get">
                   <input type="text" name="search"  class="form-control" placeholder="Search datatable">
                 </form>
               </div>
@@ -65,9 +65,6 @@
                 <form action="{{ url_for('datatables_blueprint.edit', id=data.id)}}" method="post">
                     {{ form.csrf_token }}
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div>{{ form.type.label }}{{ form.type }}</div>
-                        </div>
                         <div class="col-md-6 mb-3">
                             <div>{{ form.name.label }}{{ form.name }}</div>
                         </div>

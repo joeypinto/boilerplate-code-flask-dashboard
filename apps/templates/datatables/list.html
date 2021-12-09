@@ -18,10 +18,10 @@
                       </a>
                   </li>
                   <li class="breadcrumb-item"><a href="#">Volt</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Datatables</li>
+                  <li class="breadcrumb-item active" aria-current="page">Transactions</li>
               </ol>
           </nav>
-          <h2 class="h4">All Data</h2>
+          <h2 class="h4">All Transactions</h2>
           <p class="mb-0">Your web analytics dashboard template.</p>
       </div>
   </div>
@@ -36,7 +36,7 @@
                           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                       </svg>
                   </span>
-                  <form action="{{ url_for('datatables_blueprint.data') }}" method="get">
+                  <form action="{{ url_for('datatables_blueprint.transactions') }}" method="get">
                   <input type="text" name="search"  class="form-control" placeholder="Search datatable">
                 </form>
               </div>
@@ -63,9 +63,9 @@
           <thead>
               <tr>
                   <th class="border-gray-200">#</th>
-                  <th class="border-gray-200">Type</th>
                   <th class="border-gray-200">Name</th>
                   <th class="border-gray-200">Value</th>
+                  <th class="border-gray-200">Timestamp</th>
                   <th class="border-gray-200">Actions</th>
               </tr>
           </thead>
@@ -74,9 +74,9 @@
               {% for data in data_list %}
               <tr class="item-row" data-edit="{{ url_for('datatables_blueprint.edit_row', id=data.id) }}" data-detail="{{ url_for('datatables_blueprint.row_details', id=data.id) }}">
                   <td><span class="fw-bold">{{ data.id }}</span></td>
-                  <td><span class="fw-normal">{{ data.type }}</span></td>
                   <td><span class="fw-normal">{{ data.name }}</span></td>
                   <td><span class="fw-normal">${{ data.value }}</span></td>
+                  <td><span class="fw-normal">{{ data.ts.strftime('%d %b %Y') }}</span></td>
                   <td>
                     <a class="btn btn-sm btn-secondary" href="{{ url_for('datatables_blueprint.edit', id=data.id) }}">Edit</a>
                     <a class="btn btn-sm btn-danger delete_item"  data-href="{{ url_for('datatables_blueprint.row_delete', id=data.id) }}">Delete</a>
