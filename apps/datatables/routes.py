@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import render_template, request, jsonify, url_for, redirect
+from flask import render_template, request, jsonify, url_for, redirect, session
 from sqlalchemy import or_
 
 from apps import db
@@ -17,15 +17,18 @@ from apps.datatables.forms import DatatableForm
 @blueprint.route('/transactions.html')
 def transactions():
 
+    if "ITEMS_PER_PAGE" not in session:
+        session["ITEMS_PER_PAGE"] = 10
+
     search = request.args.get("search")
     if search:
-        ITEMS_PER_PAGE = 10
+        ITEMS_PER_PAGE = session["ITEMS_PER_PAGE"]
         page = request.args.get('page', 1, type=int)
 
         total_items = Data.query.count()
         paginated_data = Data.query.filter(or_(Data.name.like(search), Data.value.like(search))).paginate(page, ITEMS_PER_PAGE, False)
     else:
-        ITEMS_PER_PAGE = 10
+        ITEMS_PER_PAGE = session["ITEMS_PER_PAGE"]
         page = request.args.get('page', 1, type=int)
 
         total_items = Data.query.count()
@@ -37,6 +40,12 @@ def transactions():
                            data_list=paginated_data.items,
                            pagination=pagination,
                            segment="datatables")
+
+
+@blueprint.route('/transactions_rows_per_page/<int:rows>')
+def transactions_rows_per_page(rows):
+    session["ITEMS_PER_PAGE"] = int(rows)
+    return redirect(url_for('datatables_blueprint.transactions'))
 
 
 @blueprint.route('/edit/<id>', methods=["GET", "POST"])
