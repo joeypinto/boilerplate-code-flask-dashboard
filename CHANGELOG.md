@@ -8,6 +8,8 @@
   - flask_wtf==1.0.0
   - jinja2==3.0.3
   - flask-restx==0.5.1
+- Forms Update:
+  - Replace `TextField` (deprecated) with `StringField`  
 
 ## [2.0.0] 2021-09-16
 ### Improvements & Fixes
